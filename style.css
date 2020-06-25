@@ -1,0 +1,125 @@
+*{
+margin: 0;
+padding: 0;
+}
+body{
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Encode Sans', sans-serif;
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+li{
+list-style-type: none;
+display: flex;
+}
+a{
+text-decoration: none;
+}
+
+/* задали фон и отступы от лого */
+header{
+background: #f6f6f6;
+padding: 22px 0;
+}
+/* оформление и размер шапки */
+.header_container{
+width: 90%;
+margin: 0 auto;   /* что-бы было по центру, оформление и размер шапки */
+display: flex;
+justify-content: space-between;
+}
+
+/* оформление ссылок */
+
+.header_container a{
+font-family: 'Encode Sans', sans-serif;
+font-size: 16px;
+line-height: 32px;
+font-weight: 300;
+letter-spacing: 0.1em;
+color: #000000;
+text-transform: uppercase;
+padding: 27px 6px; /* (1) отступы верх-низ (2) лево-право */
+margin-right: 63px;
+transition: 0.2s;
+}
+
+
+/* спрятали чек бокс */
+#menu_checkbox{
+display: none;
+}
+
+
+.header_container a:hover{
+background: #ffea00;
+transition: 0.2s;
+}
+
+/* разместили горизонтально */
+ul{
+display: flex;
+}
+
+/* всё меню сделали по центру */
+nav{
+margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 420px){
+    .header_container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    }
+
+    .main_menu{
+    display: none;
+    }
+
+    .main_menu li{
+    width: 100%;
+    display: block;
+    font-size: 12px;
+
+    }
+    .main_menu a{
+    display: block;
+    padding: 8px;
+    }
+
+   .toggle_button{
+       text-align: center;
+       display: block;
+       cursor: pointer;
+       color: #000000;
+       margin-top: 20px;
+   }
+   .toggle_button::after{
+    content: attr(data-open);
+    display: block;
+   }
+   #menu_checkbox:checked + nav[role="navigation"] .main_menu{
+    display: block;
+   }
+   #menu_checkbox:checked + nav[role="navigation"] .toggle_button::after{
+    content: attr(data-close);
+   }
+   .header_container a{
+    margin-right: -65px;
+   }
+   .main_menu{
+    position: relative;
+    top: 30px;
+    right: 115px;
+   }    
+}
